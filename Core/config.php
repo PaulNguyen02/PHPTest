@@ -11,7 +11,7 @@
             try
             {
                 $conn = mysqli_connect(self::server, self::user, self::pass, self::database, self::port, array(
-                    MYSQLI_CLIENT_SSL_CA     => '/path/to/ca-cert.pem'
+                    MYSQLI_CLIENT_SSL_CA     => './isrgrootx1.pem'
                 ));
                 return $conn;
             }
