@@ -1,11 +1,11 @@
 <?php
     class Config
     {
-        const $server="gateway01.ap-southeast-1.prod.aws.tidbcloud.com";        //127.0.0
-        const $user="3TZcRxCtCrvrfgX.root";               
-        const $pass="K9tFcYrvm5t19nKz";
-        const $database="Motoserv";
-        const $port = 4000;     
+        const server="gateway01.ap-southeast-1.prod.aws.tidbcloud.com";        //127.0.0
+        const user="3TZcRxCtCrvrfgX.root";               
+        const pass="K9tFcYrvm5t19nKz";
+        const database="Motoserv";
+        const port = 4000;     
         function connect()
         {
             try
