@@ -6,7 +6,7 @@
         const pass="K9tFcYrvm5t19nKz";
         const database="Motoserv";
         const port = 4000;     
-        function connect()
+        /*function connect()
         {
             try
             { 
@@ -20,6 +20,45 @@
                 #{
                   #die("Connect Error: " . mysqli_connect_error());
                 #} 
+                return $conn;
+            }
+            catch(Exception $e) 
+            {
+                die($e);
+            }
+        }*/
+        function connect()
+        {
+            try
+            { 
+                /*$ssl_options = [
+                    MYSQLI_CLIENT_SSL,
+                    MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT
+                ];*/
+                
+                $conn = mysqli_init();
+                mysqli_ssl_set(
+                    $conn,
+                    './isrgrootx1.pem',
+                    './isrgrootx1.pem',
+                    './isrgrootx1.pem',
+                    null,
+                    null
+                );
+                
+                mysqli_real_connect(
+                    $conn,
+                    self::server,
+                    self::user,
+                    self::pass,
+                    self::database,
+                    self::port,
+                );
+                
+                if (mysqli_connect_errno()) {
+                    die("Failed to connect to MySQL: " . mysqli_connect_error());
+                }
+                
                 return $conn;
             }
             catch(Exception $e) 
