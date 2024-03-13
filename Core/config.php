@@ -10,9 +10,8 @@
         {
             try
             {
-                $conn = mysqli_connect(self::server, self::user, self::pass, self::database, self::port, array(
-                    MYSQLI_CLIENT_SSL_CA     => './isrgrootx1.pem'
-                ));
+                $conn = mysqli_connect(self::server, self::user, self::pass, self::database, self::port);
+                $mysqli -> ssl_set(NULL, './isrgrootx1.pem', './isrgrootx1.pem', NULL, NULL);            
                 return $conn;
             }
             catch(Exception $e) 
