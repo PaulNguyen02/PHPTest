@@ -10,8 +10,8 @@
         {
             try
             {
-                $conn = mysqli_connect(self::server, self::user, self::pass, self::database, self::port);
-                $mysqli -> ssl_set(NULL, './isrgrootx1.pem', './isrgrootx1.pem', NULL, NULL);            
+                $mysqli -> ssl_set(NULL, './isrgrootx1.pem', './isrgrootx1.pem', NULL, NULL);  
+                $conn = mysqli_connect(self::server, self::user, self::pass, self::database, self::port);          
                 return $conn;
             }
             catch(Exception $e) 
