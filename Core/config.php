@@ -31,10 +31,10 @@
         {
             try
             { 
-                $ssl_options = [
+                /*$ssl_options = [
                     MYSQLI_CLIENT_SSL,
                     MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT
-                ];
+                ];*/
                 
                 $conn = mysqli_init();
                 mysqli_ssl_set(
@@ -53,8 +53,8 @@
                     self::pass,
                     self::database,
                     self::port,
-                    null,
-                    $ssl_options
+                    #null,
+                    #$ssl_options
                 );
                 
                 if (mysqli_connect_errno()) {
