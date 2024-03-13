@@ -10,8 +10,8 @@
         {
             try
             {
-                $connect = mysqli_connect($server, $user, $pass, $database, $port);
-                return $connect;
+                $conn = mysqli_connect($server, $user, $pass, $database, $port);
+                return $conn;
             }
             catch(Exception $e) 
             {
