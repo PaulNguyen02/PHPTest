@@ -10,9 +10,9 @@
         {
             try
             { 
-                mysqli_ssl_set(NULL, NULL, './isrgrootx1.pem', './isrgrootx1.pem', NULL, NULL); 
+                $conn = mysqli_init();
+                mysqli_ssl_set($conn, NULL, './isrgrootx1.pem', './isrgrootx1.pem', NULL, NULL); 
                 $conn = mysqli_connect(self::server, self::user, self::pass, self::database, self::port);   
-                #$conn = mysqli_init();
               
                 #mysqli_ssl_set(NULL, './isrgrootx1.pem', './isrgrootx1.pem', NULL, NULL); 
                 
