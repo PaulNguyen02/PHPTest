@@ -26,7 +26,7 @@
                     self::user,
                     self::pass,
                     self::database,
-                    self::port,
+                    self::port
                 );
                 
                 if (mysqli_connect_errno()) {
