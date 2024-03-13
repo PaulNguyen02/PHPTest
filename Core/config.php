@@ -10,19 +10,16 @@
         {
             try
             { 
-                $conn = mysqli_connect(self::server, self::user, self::pass, self::database, self::port);   
-                $conn=mysqli_init();
-                if (!$conn)
-                {
-                  die("mysqli_init failed");
-                }
-                
                 mysqli_ssl_set(NULL, './isrgrootx1.pem', './isrgrootx1.pem', NULL, NULL); 
+                $conn = mysqli_connect(self::server, self::user, self::pass, self::database, self::port);   
+                #$conn = mysqli_init();
+              
+                #mysqli_ssl_set(NULL, './isrgrootx1.pem', './isrgrootx1.pem', NULL, NULL); 
                 
-                if (!mysqli_real_connect($conn,self::server,self::user,self::pass,self::database, self::port))
-                {
-                  die("Connect Error: " . mysqli_connect_error());
-                }
+                #if (!mysqli_real_connect($conn,self::server,self::user,self::pass,self::database, self::port))
+                #{
+                  #die("Connect Error: " . mysqli_connect_error());
+                #} 
                 return $conn;
             }
             catch(Exception $e) 
