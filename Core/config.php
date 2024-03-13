@@ -10,7 +10,7 @@
         {
             try
             {
-                $conn = mysqli_connect($server, $user, $pass, $database, $port);
+                $conn = mysqli_connect(self::server, self::user, self::pass, self::database, self::port);
                 return $conn;
             }
             catch(Exception $e) 
